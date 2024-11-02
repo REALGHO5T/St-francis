@@ -355,7 +355,8 @@ footer {
   .hero-section {
     height: 70vh;
     h1 {
-      font-size: 5rem;
+      font-size: 8rem;
+      letter-spacing: 2px;
     }
   }
 
@@ -367,6 +368,7 @@ footer {
     }
     h1{
         font-size: 3rem;
+        letter-spacing: 2px;
     }
     .about-right {
       height: 300px;
