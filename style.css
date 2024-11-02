@@ -1,0 +1,404 @@
+@font-face {
+  font-family: "mars";
+  src: url(Marsen.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  color: black;
+  font-family: futura;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 7rem;
+  text-transform: uppercase;
+  font-family: futura;
+  letter-spacing: -3px;
+  font-weight: 900;
+}
+
+p {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+p {
+  pointer-events: none;
+}
+
+body {
+  background-color: #cfc7c7;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  background-color: #101415;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #10141554;
+  position: fixed;
+  backdrop-filter: blur(20px);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .logo {
+    height: 3vh;
+    width: 3vh;
+  }
+
+  ul {
+    display: flex;
+    gap: 10vh;
+    list-style: none;
+
+    li a {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+
+  img {
+    filter: brightness(0.3);
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+
+    p {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      text-transform: uppercase;
+      color: white;
+    }
+    h1 {
+      font-size: clamp(4rem, 8vw, 13rem);
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: white;
+    }
+    h2 {
+      font-size: clamp(2.5rem, 4vw, 5rem);
+      font-family: futura;
+      color: white;
+    }
+  }
+}
+
+.about-section {
+  min-height: 100vh;
+  width: 100%;
+  margin-top: 20vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5vh;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .about-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    h1 {
+      line-height: 1.2;
+      font-size: clamp(3rem, 5vw, 7rem);
+    }
+  }
+
+  .about-right {
+    height: 100%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    .img {
+      border: 1px solid black;
+    }
+  }
+}
+
+.events-section {
+  width: 100%;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  padding: 20px;
+
+  .event-heading {
+    text-align: center;
+    h1 {
+      font-size: clamp(4rem, 8vw, 10rem);
+    }
+  }
+
+  .event {
+    height: 40vh;
+    background-color: #101415;
+    position: relative;
+
+    .event-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center;
+
+      h1 {
+        font-family: "mars";
+        font-size: clamp(2.5rem, 4vw, 5rem);
+        color: white;
+        text-transform: capitalize;
+        font-weight: 400;
+        letter-spacing: 1px;
+        white-space: normal;
+      }
+      p {
+        color: white;
+        font-family: "futura";
+        font-weight: 400;
+        font-size: clamp(1.8rem, 3vw, 3rem);
+      }
+    }
+  }
+
+  .event-day1,
+  .event-day2,
+  .event-day3 {
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      font-size: clamp(3rem, 5vw, 7rem);
+      margin-bottom: 4vh;
+    }
+
+    .events {
+      width: 100%;
+      display: grid;
+      gap: 2vh;
+      grid-template-columns: 1fr;
+
+      @media (min-width: 768px) {
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+      }
+    }
+  }
+
+  .event-day2 .events #event13,
+  .event-day3 .events #event18 {
+    @media (min-width: 768px) {
+      grid-column: span 2;
+      width: 50%;
+      margin: auto;
+    }
+  }
+}
+
+footer {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  gap: 5vh;
+  padding: 20px;
+  background-color: #101415;
+  position: relative;
+  margin-top: 20vh;
+  justify-content: center;
+  align-items: center;
+
+  .footer-left {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    text-align: center;
+    padding-bottom: 60px;
+
+    @media (min-width: 768px) {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 4vw, 5rem);
+      color: white;
+    }
+    p {
+      color: white;
+      font-size: clamp(1.6rem, 2vw, 2rem);
+    }
+
+    .btn {
+      width: 80%;
+      margin-inline: auto;
+
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+    }
+  }
+
+  .btn {
+    background-color: #cfc7c7;
+    color: black;
+  }
+
+  .footer-bottom {
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    border-top: 1px solid white;
+
+    p {
+      color: white;
+      font-size: clamp(1.4rem, 1.6vw, 2rem);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px;
+
+    ul {
+      gap: 5vh;
+
+      li a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    ul {
+      gap: 5vh;
+    }
+
+    li a {
+      font-size: 1rem;
+    }
+    .btn {
+      font-size: 1.2rem;
+    }
+  }
+
+  .hero-section {
+    height: 70vh;
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  .about-section {
+    margin-top: 10vh;
+
+    p {
+      font-size: 1rem;
+    }
+    .about-right {
+      height: 300px;
+
+      img {
+        object-position: top;
+      }
+    }
+  }
+  .events-section {
+    margin-top: 10vh;
+
+    .event{
+        height: 25vh;
+    }
+  }
+  footer {
+    h1 {
+      letter-spacing: 1px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  header {
+    ul {
+      gap: 3vh;
+    }
+
+    .btn {
+      font-size: 1.2rem;
+    }
+  }
+}
